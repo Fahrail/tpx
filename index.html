@@ -15,17 +15,12 @@
     <div class="hero-frame">
       <img class="hero-banner" src="tpx.png" alt="TPX Roadmap Banner" />
       <div class="hero-content">
-        <p class="hero-subtitle">
-  Everything you need to configure TPX permissions, teleport customization,
-  cooldowns, warmups, XP costs, sounds, particles, and more.
-</p>
-<p class="eyebrow">TPX Documentation</p>
         <h1>Permissions Guide</h1>
         <p class="hero-text">
-  Complete documentation for TPX's advanced permission system, allowing server
-  owners to customize homes, warps, cooldowns, warmups, XP costs, sounds,
-  particles, and more.
-</p>
+          Complete documentation for TPX's advanced permission system, allowing server
+          owners to customize homes, warps, cooldowns, warmups, XP costs, sounds,
+          particles, and more.
+        </p>
         <div class="hero-actions">
           <a class="button primary" href="#quick-start">Quick Start</a>
           <a class="button ghost" href="#discord">Need Help?</a>
@@ -37,30 +32,29 @@
   <main>
     <section id="quick-start" class="panel intro">
       <div>
-        <p class="eyebrow">Start Here</p>
         <h2>How TPX Permissions Work</h2>
         <p>
-  TPX uses permission nodes to let server owners customize teleport behavior.
-  Permissions can be assigned to groups, ranks, individual players, or any
-  other system supported by your server. This allows homes, cooldowns,
-  warmups, XP costs, warp access, sounds, and particle effects to be
-  customized on a per-player basis.
-</p>
+          TPX uses permission nodes to let server owners customize teleport behavior.
+          Permissions can be assigned to groups, ranks, individual players, or any
+          other system supported by your server. This allows homes, cooldowns,
+          warmups, XP costs, warp access, sounds, and particle effects to be
+          customized on a per-player basis.
+        </p>
         <p>
           Most TPX permission nodes follow this pattern:
         </p>
         <pre><code>tpx.&lt;system&gt;.&lt;type&gt;.&lt;value&gt;</code></pre>
       </div>
-<div class="note">
-    Supported teleport types:
-    <code>tpa</code>,
-    <code>home</code>,
-    <code>spawn</code>,
-    <code>back</code>,
-    <code>rtp</code>,
-    <code>deathpoint</code>,
-    <code>warp</code>
-</div>
+      <div class="note">
+        Supported teleport types:
+        <code>tpa</code>,
+        <code>home</code>,
+        <code>spawn</code>,
+        <code>back</code>,
+        <code>rtp</code>,
+        <code>deathpoint</code>,
+        <code>warp</code>
+      </div>
     </section>
 
     <section class="tabs-panel">
@@ -76,7 +70,6 @@
       </div>
 
       <article id="homes" class="tab-content active">
-        <p class="eyebrow">Home Limits</p>
         <h2>Home Permission Nodes</h2>
         <p>
           Home permissions control how many homes a player can create. If multiple home limit
@@ -128,7 +121,6 @@ tpx.homes.100</code></pre>
       </article>
 
       <article id="warps" class="tab-content">
-        <p class="eyebrow">Warp Access</p>
         <h2>Warp Permission Nodes</h2>
         <p>
           Warps can be public, OP-only, or locked behind a numeric permission ID.
@@ -186,10 +178,10 @@ tpx.warp.100</code></pre>
       </article>
 
       <article id="cooldowns" class="tab-content">
-        <p class="eyebrow">Timing Perks</p>
         <h2>Cooldown Permission Nodes</h2>
         <p>
-          Cooldown permissions allow teleport cooldowns to be customized for different players, groups, or permission assignments.
+          Cooldown permissions allow teleport cooldowns to be customized for different players, groups, or permission
+          assignments.
           When multiple cooldown permissions are assigned, TPX applies the shortest available
           cooldown value. This allows higher ranks to receive faster teleport access without
           affecting lower ranks.
@@ -212,8 +204,8 @@ tpx.cooldown.home.0</code></pre>
             <thead>
               <tr>
                 <th>Example</th>
-<th>Permission</th>
-<th>Result</th>
+                <th>Permission</th>
+                <th>Result</th>
               </tr>
             </thead>
             <tbody>
@@ -247,7 +239,6 @@ tpx.cooldown.home.0</code></pre>
       </article>
 
       <article id="warmups" class="tab-content">
-        <p class="eyebrow">Teleport Delay</p>
         <h2>Warmup Permission Nodes</h2>
         <p>
           Warmup permissions reduce the delay before a teleport begins. When multiple warmup
@@ -272,7 +263,6 @@ tpx.warmup.home.0</code></pre>
       </article>
 
       <article id="xp" class="tab-content">
-        <p class="eyebrow">XP Economy</p>
         <h2>XP Cost Permission Nodes</h2>
         <p>
           XP cost permissions control how much experience is required to use a teleport command.
@@ -297,10 +287,10 @@ tpx.xpcost.home.0</code></pre>
       </article>
 
       <article id="sounds" class="tab-content">
-        <p class="eyebrow">Custom Audio</p>
         <h2>Sound Permission Nodes</h2>
         <p>
-          Sound permissions allow different players, groups, or permission assignments to use different configured sound slots for teleport actions.
+          Sound permissions allow different players, groups, or permission assignments to use different configured sound
+          slots for teleport actions.
         </p>
 
         <div class="node-box">
@@ -332,10 +322,10 @@ tpx.sound.warp.25</code></pre>
       </article>
 
       <article id="particles" class="tab-content">
-        <p class="eyebrow">Custom Effects</p>
         <h2>Particle Permission Nodes</h2>
         <p>
-          Particle permissions allow different players, groups, or permission assignments to use different configured particle slots for teleport actions.
+          Particle permissions allow different players, groups, or permission assignments to use different configured
+          particle slots for teleport actions.
         </p>
 
         <div class="node-box">
@@ -367,23 +357,25 @@ tpx.particle.warp.25</code></pre>
       </article>
 
       <article id="ranks" class="tab-content">
-        <p class="eyebrow">Example Configurations</p>
         <h2>Example Configurations</h2>
         <p>
-The examples below demonstrate a few common ways TPX permissions can be used. These are only examples — permissions can be assigned to groups, ranks, individual players, events, staff teams, donors, or any other permission structure supported by your server.
-</p>
+          The examples below demonstrate a few common ways TPX permissions can be used. Permissions can be assigned to
+          groups, ranks, individual players, events, staff teams, donors, or any other permission structure supported by
+          your server.
+        </p>
 
-<h3>Default Survival Players</h3>
+        <h3>Default Survival Players</h3>
 
-<pre><code>tpx.homes.3</code></pre>
+        <pre><code>tpx.homes.3</code></pre>
 
-<p>
-A simple setup that gives all players access to three homes while using the server's default cooldowns, warmups, XP costs, sounds, and particle effects.
-</p>
+        <p>
+          A simple setup that gives all players access to three homes while using the server's default cooldowns,
+          warmups, XP costs, sounds, and particle effects.
+        </p>
 
-<h3>Supporter Perks</h3>
+        <h3>Supporter Perks</h3>
 
-<pre><code>tpx.homes.10
+        <pre><code>tpx.homes.10
 tpx.cooldown.home.15
 tpx.cooldown.tpa.5
 tpx.warmup.home.2
@@ -392,13 +384,14 @@ tpx.sound.home.1
 tpx.particle.home.1
 tpx.warp.2</code></pre>
 
-<p>
-Provides additional homes, reduced cooldowns, faster teleports, custom effects, and access to supporter-only warps.
-</p>
+        <p>
+          Provides additional homes, reduced cooldowns, faster teleports, custom effects, and access to supporter-only
+          warps.
+        </p>
 
-<h3>Staff Team</h3>
+        <h3>Staff Team</h3>
 
-<pre><code>tpx.homes.25
+        <pre><code>tpx.homes.25
 tpx.cooldown.home.0
 tpx.cooldown.spawn.0
 tpx.warmup.home.0
@@ -406,13 +399,13 @@ tpx.warmup.spawn.0
 tpx.xpcost.home.0
 tpx.xpcost.spawn.0</code></pre>
 
-<p>
-Allows moderators and administrators to move around the server quickly without delays or XP requirements.
-</p>
+        <p>
+          Allows moderators and administrators to move around the server quickly without delays or XP requirements.
+        </p>
 
-<h3>Special Event Reward</h3>
+        <h3>Special Event Reward</h3>
 
-<pre><code>tpx.homes.50
+        <pre><code>tpx.homes.50
 tpx.cooldown.home.0
 tpx.cooldown.rtp.0
 tpx.warmup.home.0
@@ -422,21 +415,22 @@ tpx.particle.home.5
 tpx.sound.warp.5
 tpx.particle.warp.5</code></pre>
 
-<p>
-A temporary reward that can be granted to tournament winners, seasonal champions, or event participants.
-</p>
+        <p>
+          A temporary reward that can be granted to tournament winners, seasonal champions, or event participants.
+        </p>
 
-<h3>Individual Player Customization</h3>
+        <h3>Individual Player Customization</h3>
 
-<pre><code>tpx.homes.100
+        <pre><code>tpx.homes.100
 tpx.sound.home.10
 tpx.particle.home.10
 tpx.sound.spawn.10
 tpx.particle.spawn.10</code></pre>
 
-<p>
-Demonstrates how TPX permissions can be used to create completely custom experiences for specific players without affecting anyone else on the server.
-</p>
+        <p>
+          Demonstrates how TPX permissions can be used to create completely custom experiences for specific players
+          without affecting anyone else on the server.
+        </p>
 
 
         <div class="note">
