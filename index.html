@@ -16,7 +16,7 @@
       <img class="hero-banner" src="tpx.png" alt="TPX Roadmap Banner" />
       <div class="hero-content">
         <p class="eyebrow">TPX Documentation</p>
-        <h1>Custom Permissions Guide</h1>
+        <h1>Permissions Guide</h1>
         <p class="hero-text">
           Complete documentation for TPX permissions, rank customization, warp access,
           teleport effects, cooldowns, warmups, XP costs, and server configuration.
@@ -69,16 +69,15 @@
         <button class="tab" data-tab="sounds">Sounds</button>
         <button class="tab" data-tab="particles">Particles</button>
         <button class="tab" data-tab="ranks">Example Server Setups</button>
-        <button class="tab" data-tab="faq">FAQ</button>
       </div>
 
       <article id="homes" class="tab-content active">
         <p class="eyebrow">Home Limits</p>
         <h2>Home Permission Nodes</h2>
         <p>
-          Home permissions control how many homes a player can create. TPX checks the player's
-          permissions and uses the highest home amount it finds, while never going below the
-          default max homes value in the config.
+          Home permissions control how many homes a player can create. If multiple home limit
+          permissions are assigned, TPX uses the largest home limit available while never going
+          below the default value configured by the server owner.
         </p>
 
         <div class="node-box">
@@ -97,7 +96,7 @@ tpx.homes.100</code></pre>
           <code>tpx.homes.1000</code>.
         </div>
 
-        <h3>How “Highest Wins” Works</h3>
+        <h3>Permission Priority</h3>
         <div class="table-wrap">
           <table>
             <thead>
@@ -187,8 +186,9 @@ tpx.warp.100</code></pre>
         <h2>Cooldown Permission Nodes</h2>
         <p>
           Cooldown permissions let you reduce command cooldowns for certain ranks.
-          TPX checks from 0 seconds up to the configured scan max and uses the lowest matching
-          value. This means lower cooldown nodes are stronger.
+          When multiple cooldown permissions are assigned, TPX applies the shortest available
+          cooldown value. This allows higher ranks to receive faster teleport access without
+          affecting lower ranks.
         </p>
 
         <div class="node-box">
@@ -246,8 +246,9 @@ tpx.cooldown.home.0</code></pre>
         <p class="eyebrow">Teleport Delay</p>
         <h2>Warmup Permission Nodes</h2>
         <p>
-          Warmup permissions reduce the countdown before teleporting. Like cooldowns,
-          lower values are better, and <code>0</code> means instant teleport.
+          Warmup permissions reduce the delay before a teleport begins. When multiple warmup
+          permissions are assigned, TPX uses the shortest available warmup value. A value of
+          0 provides instant teleportation.
         </p>
 
         <div class="node-box">
@@ -270,8 +271,9 @@ tpx.warmup.home.0</code></pre>
         <p class="eyebrow">XP Economy</p>
         <h2>XP Cost Permission Nodes</h2>
         <p>
-          XP cost permissions reduce how much XP a teleport command costs.
-          Lower values are better, and <code>0</code> makes that teleport type free.
+          XP cost permissions control how much experience is required to use a teleport command.
+          When multiple XP cost permissions are assigned, TPX uses the lowest available cost.
+          A value of 0 removes the XP requirement entirely.
         </p>
 
         <div class="node-box">
@@ -295,8 +297,8 @@ tpx.xpcost.home.0</code></pre>
         <h2>Sound Permission Nodes</h2>
         <p>
           Sound permissions let ranks use different configured sound slots for teleport actions.
-          TPX scans from the highest configured ID down to 1, so higher sound IDs win when a player
-          has multiple matching sound permissions.
+          If multiple sound permissions are assigned, TPX uses the sound slot with the highest
+          configured ID. This makes it easy to provide upgraded teleport sounds to higher ranks.
         </p>
 
         <div class="node-box">
@@ -332,8 +334,8 @@ tpx.sound.warp.25</code></pre>
         <h2>Particle Permission Nodes</h2>
         <p>
           Particle permissions let ranks use different configured particle slots for teleport actions.
-          TPX scans from the highest configured ID down to 1, so higher particle IDs win when a player
-          has multiple matching particle permissions.
+          If multiple particle permissions are assigned, TPX uses the particle slot with the
+          highest configured ID. This allows higher ranks to unlock more advanced teleport effects.
         </p>
 
         <div class="node-box">
@@ -407,63 +409,23 @@ tpx.particle.home.10</code></pre>
         </div>
       </article>
 
-      <article id="faq" class="tab-content">
-        <p class="eyebrow">Troubleshooting</p>
-        <h2>Common Questions</h2>
-
-        <div class="faq-list">
-          <details open>
-            <summary>Why is my permission not working?</summary>
-            <p>
-              Check spelling, the teleport type, and the number. For example,
-              <code>deathpoint</code> has no underscore in permission nodes.
-            </p>
-          </details>
-
-          <details>
-            <summary>Which permission wins if a player has multiple?</summary>
-            <p>
-              Homes use the highest home amount. Cooldowns, warmups, and XP costs use the lowest value.
-              Sounds and particles use the highest matching ID.
-            </p>
-          </details>
-
-          <details>
-            <summary>Why does OP bypass my cooldown, warmup, or XP cost?</summary>
-            <p>
-              TPX has config options for OP permission-level bypasses. Disable those bypass options or lower
-              the OP permission level settings if you want staff to follow normal timing/cost rules.
-            </p>
-          </details>
-
-          <details>
-            <summary>Why does my sound or particle not play?</summary>
-            <p>
-              Make sure the matching global feature is enabled, the player has not disabled it in
-              <code>/tpx settings</code>, the slot ID exists, and the configured sound or particle ID is valid.
-            </p>
-          </details>
+      <section id="discord" class="panel discord">
+        <div>
+          <p class="eyebrow">Need Help?</p>
+          <h2>Join the TPX Discord</h2>
         </div>
-      </article>
-    </section>
-
-    <section id="discord" class="panel discord">
-      <div>
-        <p class="eyebrow">Need Help?</p>
-        <h2>Join the TPX Discord</h2>
-        <p>
-          Having trouble with permissions, configs, or server setup? Add your Discord invite here
-          so server owners know where to ask questions.
-        </p>
-      </div>
-      <a class="button primary" href="https://discord.gg/dmTncnPAPW" target="_blank" rel="noopener noreferrer">
-        Join Discord
-      </a>
-    </section>
+        <a class="button primary" href="https://discord.gg/dmTncnPAPW" target="_blank" rel="noopener noreferrer">
+          Join Discord
+        </a>
+      </section>
   </main>
 
   <footer>
-    <p>TPX by Fahrail · Fully configurable teleportation for Minecraft servers.</p>
+    <div class="footer-content">
+      <h3>TPX</h3>
+      <p>Fully configurable teleportation for Minecraft servers.</p>
+      <span>Developed by Fahrail</span>
+    </div>
   </footer>
 
   <script>
